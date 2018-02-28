@@ -1,4 +1,4 @@
-# Toxic Comment Classification
+# Toxic Comment Classification (TCC)
 
 ![Баннер](https://github.com/ficusss/Toxic-Comment-Classification/blob/master/banner0.png)
 
@@ -15,6 +15,16 @@
   * унизительный;
 
 ## Сравнение с аналогами
+
+| Название продукта | Интерактивная обработка | Классификация содержания | Поддержка русского языка | GUI | Открытый исходный код | 
+|-------------------|:---:|:---:|:---:|:---:|:---:|
+|[**TCC**](https://github.com/grisha-feoktistov/Toxic-Comment-Classification) | **-** | **+** | **+** | **+** | **+** |
+|[Perspective](http://www.perspectiveapi.com/#/) | **+** | **-** | **-** | **+** | **-** | 
+|[Detecting insults](https://github.com/tuzzeg/detect_insults)| **-** | **-** | **-** | **-** | **+** |
+
+
+
+
 
 Для простого выявления агрессивных сообщений есть большое число средств, однако, представленная работа позволяет получить более детальную информацию, полезную не только при поддержании порядка, но и при анализе аудитории ресурса.
 
