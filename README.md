@@ -1,6 +1,6 @@
 # Toxic Comment Classification (TCC)
 
-![Баннер](https://github.com/ficusss/Toxic-Comment-Classification/blob/master/banner0.png)
+![Баннер](https://github.com/grisha-feoktistov/Toxic-Comment-Classification/blob/master/banner0.png)
 
 ## Введение. Цель проекта
 
