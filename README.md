@@ -94,5 +94,8 @@
 ## Тестирование
 
 
-## Ссылки и литература
+# Ссылки и литература
+* Tajinder Singh, Madhu Kumar, ["Role of Text Pre-Processing in Twitter Sentiment Analysis"](https://www.sciencedirect.com/science/article/pii/S1877050916311607), 2016
+* Richard Socher, Alex Perelygin, Jean Y. Wu, Jason Chuang, Christopher D. Manning, Andrew Y. Ng and Christopher Potts, ["Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank"](https://nlp.stanford.edu/~socherr/EMNLP2013_RNTN.pdf), 2013
+* Серия статей "Another Twitter sentiment analysis" [(часть 1)](https://towardsdatascience.com/another-twitter-sentiment-analysis-bb5b01ebad90)
 
