@@ -1,6 +1,6 @@
 # Toxic Comment Classification (TCC)
 
-![Баннер](images/project_logo.png)
+![banner image](images/project_logo.png)
 
 
 ## Введение. Цель проекта
