@@ -18,6 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Controllers\Controller.h" />
+    <ClInclude Include="Cores\Core.h" />
+    <ClInclude Include="DataHandlers\DataHandler.h" />
+    <ClInclude Include="DataProviders\DataProvider.h" />
+    <ClInclude Include="DataTypes\Message.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9B86BB11-C525-48BA-8AE6-E801E4BB29C2}</ProjectGuid>
     <RootNamespace>ToxicCommentClassification</RootNamespace>
@@ -109,13 +119,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="Controller.h" />
-    <ClInclude Include="Core.h" />
-    <ClInclude Include="DataProcessing.h" />
-    <ClInclude Include="DataProvider.h" />
-    <ClInclude Include="Message.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

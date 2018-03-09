@@ -1,10 +1,14 @@
 #pragma once
 
-#include "Message.h"
+#include "../DataTypes/Message.h"
 
 /**
- *
- */
+@brief Интерфейс для классов предобработки текста
+*/
 class DataProcessing {
-	virtual bool run(const Message& msg) const = 0;
+	/**
+	@brief Виртуальная функция для предобработки текста
+	@param msg Структура данных, содержащая в себе текст подлежащий предобработке
+	*/
+	virtual void run(const Message& msg) const = 0;
 };
