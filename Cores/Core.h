@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Message.h"
+#include "../DataTypes/Message.h"
 
 /**
  *
