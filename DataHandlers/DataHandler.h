@@ -2,13 +2,20 @@
 
 #include "../DataTypes/Message.h"
 
+
 /**
-@brief Интерфейс для классов предобработки текста
+namespace tcc
+@brief Пространство имен tcc
 */
-class DataProcessing {
+namespace tcc {
 	/**
-	@brief Виртуальная функция для предобработки текста
-	@param msg Структура данных, содержащая в себе текст подлежащий предобработке
+	@brief Интерфейс для классов предобработки текста
 	*/
-	virtual void run(const Message& msg) const = 0;
-};
+	class DataProcessing {
+		/**
+		@brief Виртуальная функция для предобработки текста
+		@param msg Структура данных, содержащая в себе текст подлежащий предобработке
+		*/
+		virtual void run(const Message& msg) const = 0;
+	};
+}

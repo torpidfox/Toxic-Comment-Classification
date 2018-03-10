@@ -1,0 +1,113 @@
+\hypertarget{classtcc_1_1_file_data_provider}{}\section{Класс tcc\+:\+:File\+Data\+Provider}
+\label{classtcc_1_1_file_data_provider}\index{tcc\+::\+File\+Data\+Provider@{tcc\+::\+File\+Data\+Provider}}
+
+
+Класс для считывания/записи данных из/в файл(а)  
+
+
+
+
+{\ttfamily \#include $<$Data\+Provider.\+h$>$}
+
+Граф наследования\+:tcc\+:\+:File\+Data\+Provider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtcc_1_1_file_data_provider}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtcc_1_1_file_data_provider_a86089a313a91640e85c4eb6e221ec357}{File\+Data\+Provider}} (std\+::vector$<$ char $>$ input\+\_\+file, std\+::vector$<$ char $>$ output\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classtcc_1_1_message}{Message}} $>$ \mbox{\hyperlink{classtcc_1_1_file_data_provider_ada1c8160929d1b3a2de366bda89ec0b8}{get\+\_\+data}} () const override
+\begin{DoxyCompactList}\small\item\em Функция для считывания данных из файла \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtcc_1_1_file_data_provider_a969360abf9313a4b81de0af227025fa0}{save\+\_\+data}} (const \mbox{\hyperlink{classtcc_1_1_message}{Message}} \&msg) const override
+\begin{DoxyCompactList}\small\item\em Функция для записи данных в файл \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс для считывания/записи данных из/в файл(а) 
+
+См. определение в файле Data\+Provider.\+h строка 35
+
+
+
+\subsection{Конструктор(ы)}
+\mbox{\Hypertarget{classtcc_1_1_file_data_provider_a86089a313a91640e85c4eb6e221ec357}\label{classtcc_1_1_file_data_provider_a86089a313a91640e85c4eb6e221ec357}} 
+\index{tcc\+::\+File\+Data\+Provider@{tcc\+::\+File\+Data\+Provider}!File\+Data\+Provider@{File\+Data\+Provider}}
+\index{File\+Data\+Provider@{File\+Data\+Provider}!tcc\+::\+File\+Data\+Provider@{tcc\+::\+File\+Data\+Provider}}
+\subsubsection{\texorpdfstring{File\+Data\+Provider()}{FileDataProvider()}}
+{\footnotesize\ttfamily tcc\+::\+File\+Data\+Provider\+::\+File\+Data\+Provider (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{input\+\_\+file,  }\item[{std\+::vector$<$ char $>$}]{output\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор класса 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em input\+\_\+file} & Имя файла для чтения \\
+\hline
+{\em output\+\_\+file} & Имя файла для записи \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле Data\+Provider.\+h строка 46
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{classtcc_1_1_file_data_provider_ada1c8160929d1b3a2de366bda89ec0b8}\label{classtcc_1_1_file_data_provider_ada1c8160929d1b3a2de366bda89ec0b8}} 
+\index{tcc\+::\+File\+Data\+Provider@{tcc\+::\+File\+Data\+Provider}!get\+\_\+data@{get\+\_\+data}}
+\index{get\+\_\+data@{get\+\_\+data}!tcc\+::\+File\+Data\+Provider@{tcc\+::\+File\+Data\+Provider}}
+\subsubsection{\texorpdfstring{get\+\_\+data()}{get\_data()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classtcc_1_1_message}{Message}}$>$ tcc\+::\+File\+Data\+Provider\+::get\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Функция для считывания данных из файла 
+
+\begin{DoxyReturn}{Возвращает}
+Вектор структур данных, содержащих в себе считанные данные 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em I\+O\+Exception} & Исключение возникающее при проблемах с чтением файла \\
+\hline
+\end{DoxyExceptions}
+
+
+Замещает \mbox{\hyperlink{classtcc_1_1_data_provider}{tcc\+::\+Data\+Provider}}.
+
+\mbox{\Hypertarget{classtcc_1_1_file_data_provider_a969360abf9313a4b81de0af227025fa0}\label{classtcc_1_1_file_data_provider_a969360abf9313a4b81de0af227025fa0}} 
+\index{tcc\+::\+File\+Data\+Provider@{tcc\+::\+File\+Data\+Provider}!save\+\_\+data@{save\+\_\+data}}
+\index{save\+\_\+data@{save\+\_\+data}!tcc\+::\+File\+Data\+Provider@{tcc\+::\+File\+Data\+Provider}}
+\subsubsection{\texorpdfstring{save\+\_\+data()}{save\_data()}}
+{\footnotesize\ttfamily bool tcc\+::\+File\+Data\+Provider\+::save\+\_\+data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtcc_1_1_message}{Message}} \&}]{msg }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Функция для записи данных в файл 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em msg} & Структура данных, содержащая в себе данные подлежащие записи \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Булевое значение\+:
+\begin{DoxyItemize}
+\item 0 запись не удаласть
+\item 1 запись удалась 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Замещает \mbox{\hyperlink{classtcc_1_1_data_provider}{tcc\+::\+Data\+Provider}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Data\+Providers/Data\+Provider.\+h\end{DoxyCompactItemize}

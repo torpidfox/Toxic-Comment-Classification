@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['run',['run',['../class_main_controller.html#a5988de20a9d4f3d84cb7e3dabe2f6eec',1,'MainController']]]
+  ['randomcore',['RandomCore',['../classtcc_1_1_random_core.html',1,'tcc']]],
+  ['run',['run',['../classtcc_1_1_main_controller.html#ae2bba3331119518ee5e9b4b139158dd6',1,'tcc::MainController']]]
 ];
