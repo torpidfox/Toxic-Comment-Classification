@@ -26,6 +26,7 @@
     <ClInclude Include="includes\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cores\RandomCore.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
