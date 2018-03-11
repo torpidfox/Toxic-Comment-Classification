@@ -24,10 +24,10 @@
     <ClInclude Include="DataProviders\DataProvider.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="DataTypes\Message.h">
+    <ClInclude Include="DataHandlers\DataHandler.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="DataHandlers\DataHandler.h">
+    <ClInclude Include="includes\json.hpp">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,7 +1,9 @@
 #pragma once
 
-#include "../DataTypes/Message.h"
+#include "../includes/json.hpp"
 
+
+using json = nlohmann::json;
 
 /**
 namespace tcc
@@ -16,6 +18,6 @@ namespace tcc {
 		@brief Виртуальная функция для предобработки текста
 		@param msg Структура данных, содержащая в себе текст подлежащий предобработке
 		*/
-		virtual void run(const Message& msg) const = 0;
+		virtual void run(const json& msg) const = 0;
 	};
 }

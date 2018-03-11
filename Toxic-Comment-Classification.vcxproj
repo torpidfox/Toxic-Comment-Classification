@@ -23,7 +23,7 @@
     <ClInclude Include="Cores\Core.h" />
     <ClInclude Include="DataHandlers\DataHandler.h" />
     <ClInclude Include="DataProviders\DataProvider.h" />
-    <ClInclude Include="DataTypes\Message.h" />
+    <ClInclude Include="includes\json.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

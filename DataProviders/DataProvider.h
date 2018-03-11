@@ -1,8 +1,10 @@
 #pragma once
 
-#include "../DataTypes/Message.h"
+#include "../includes/json.hpp"
 #include <vector>
 
+
+using json = nlohmann::json;
 
 /**
 namespace tcc
@@ -18,7 +20,7 @@ namespace tcc {
 		@return Вектор структур данных, содержащих в себе считанные данные
 		@throw IOException Исключение возникающее при проблемах с чтением файла
 		*/
-		virtual std::vector<Message> get_data() const = 0;
+		virtual std::vector<json> get_data() const = 0;
 		/**
 		@brief Виртуальная функция для записи данных
 		@param msg Структура данных, содержащая в себе данные подлежащие записи
@@ -26,7 +28,7 @@ namespace tcc {
 			- 0 запись не удаласть
 			- 1 запись удалась
 		*/
-		virtual bool save_data(const Message& msg) const = 0;
+		virtual bool save_data(const json& msg) const = 0;
 	};
 
 	/**
@@ -52,7 +54,7 @@ namespace tcc {
 		@return Вектор структур данных, содержащих в себе считанные данные
 		@throw IOException Исключение возникающее при проблемах с чтением файла
 		*/
-		std::vector<Message> get_data() const override;
+		std::vector<json> get_data() const override;
 
 		/**
 		@brief Функция для записи данных в файл
@@ -61,7 +63,7 @@ namespace tcc {
 			- 0 запись не удаласть
 			- 1 запись удалась
 		*/
-		bool save_data(const Message& msg) const override;
+		bool save_data(const json& msg) const override;
 	};
 
 	/*

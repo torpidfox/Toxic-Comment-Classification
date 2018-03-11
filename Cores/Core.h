@@ -1,7 +1,9 @@
 #pragma once
 
-#include "../DataTypes/Message.h"
+#include "../includes/json.hpp"
 
+
+using json = nlohmann::json;
 
 /**
 namespace tcc
@@ -16,7 +18,7 @@ namespace tcc {
 		@brief Виртуальная функция классификации "недоброжелательности" текста
 		@param msg Структура данных, содержащая в себе текст подлежащий анализу
 		*/
-		virtual void run(const Message& msg) const = 0;
+		virtual void run(const json& msg) const = 0;
 	};
 
 	/**
@@ -27,6 +29,6 @@ namespace tcc {
 		@brief Функция классификации "недоброжелательности" текста
 		@param msg Структура данных, содержащая в себе текст подлежащий анализу
 		*/
-		void run(const Message& msg) const override;
+		void run(const json& msg) const override;
 	};
 }
