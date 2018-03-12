@@ -1,8 +1,10 @@
 #pragma once
 
+#include<memory>
+
 #include "../DataProviders/DataProvider.h"
 #include "../Cores/Core.h"
-#include "../DataHandlers/DataHandler.h"
+#include "../DataHandlers/DataPreprocessing.h"
 
 
 /**
@@ -28,7 +30,7 @@ namespace tcc {
 	private:
 		std::shared_ptr<DataProvider> _data_provider;
 		std::shared_ptr<Core> _core;
-		std::shared_ptr<DataProcessing> _data_processing;
+		std::shared_ptr<DataPreprocessing> _data_processing;
 
 	public:
 		/**
@@ -38,7 +40,7 @@ namespace tcc {
 		@param core ”казатель на используемое €дро
 		*/
 		MainController(std::shared_ptr<DataProvider> data_provider,
-			std::shared_ptr<DataProcessing> data_processing,
+			std::shared_ptr<DataPreprocessing> data_processing,
 			std::shared_ptr<Core> core)
 			: _data_provider(data_provider), _core(core), _data_processing(data_processing)
 		{};

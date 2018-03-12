@@ -1,7 +1,9 @@
 #pragma once
 
-#include "../includes/json.hpp"
 #include <vector>
+#include <string>
+
+#include "../includes/json.hpp"
 
 
 using json = nlohmann::json;
@@ -36,8 +38,8 @@ namespace tcc {
 	*/
 	class FileDataProvider : public DataProvider {
 	private:
-		std::vector<char> _input_file;
-		std::vector<char> _output_file;
+		std::string _input_file;
+		std::string _output_file;
 
 	public:
 		/**
@@ -45,7 +47,7 @@ namespace tcc {
 		@param input_file Имя файла для чтения
 		@param output_file Имя файла для записи
 		*/
-		FileDataProvider(std::vector<char> input_file, std::vector<char> output_file)
+		FileDataProvider(std::string input_file, std::string output_file)
 			: _input_file(input_file), _output_file(output_file)
 		{};
 
