@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <string>
-
+#include <fstream>
 #include "../includes/json.hpp"
 
 
@@ -34,22 +34,27 @@ namespace tcc {
 	};
 
 	/**
-	@brief Класс для считывания/записи данных из/в файл(а)
+	@brief Класс для считывания тренировочных образцов с сайта Kaggle
 	*/
-	class FileDataProvider : public DataProvider {
+	class KaggleDataProvider : public DataProvider {
 	private:
 		std::string _input_file;
-		std::string _output_file;
+
+		static const char s_delim = ',';
+		static const char* s_quot;
+
+		static json _sample_to_json(std::vector<std::string>& s, std::vector<bool>& r);
+		static std::string _parse_id(std::string& s);
+		static bool _parse_text(std::string& line, std::string& dst);
+		static std::vector<bool> _parse_rating(std::string& line);
 
 	public:
 		/**
 		@brief Конструктор класса
 		@param input_file Имя файла для чтения
-		@param output_file Имя файла для записи
 		*/
-		FileDataProvider(std::string input_file, std::string output_file)
-			: _input_file(input_file), _output_file(output_file)
-		{};
+		KaggleDataProvider(std::string input_file)
+			: _input_file(input_file) {};
 
 		/**
 		@brief Функция для считывания данных из файла
