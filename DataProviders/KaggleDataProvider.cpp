@@ -1,4 +1,4 @@
-#include "DataProvider.h"
+﻿#include "DataProviders/DataProvider.h"
 
 const char* tcc::KaggleDataProvider::s_quot = "\",";
 const char tcc::KaggleDataProvider::s_delim = ',';
@@ -67,24 +67,33 @@ std::vector<bool> tcc::KaggleDataProvider::_parse_rating(std::string& line) cons
 
 std::vector<json> tcc::KaggleDataProvider::get_data() const{
 	std::ifstream src;
-	std::vector<json> result;
+	std::vector<json> result = {};
 	std::string line;
-
+	
 	src.open(_input_file, std::ifstream::in);
+	if (src.fail()) //если не удалось открыть файл, возвращаем 0
+		return result;
 
-	while (src.good()) {
-		std::vector<std::string> buff;
-		if(!getline(src, line))
-			break;
-		buff.push_back(static_cast<std::string&&> (_parse_id(line)));
-		std::string text = "";
-		while (!_parse_text(line, text)) {
-			if(!getline(src, line))
+	try {
+		while (src.good()) {
+			std::vector<std::string> buff;
+			if (!getline(src, line))
 				break;
-			while (!line.size()) getline(src, line);;
+			buff.push_back(static_cast<std::string&&> (_parse_id(line)));
+			std::string text = "";
+			while (!_parse_text(line, text)) {
+				if (!getline(src, line))
+					break;
+				while (!line.size()) getline(src, line);;
+			}
+			buff.push_back(text);
+			result.push_back(static_cast<json&&> (_sample_to_json(buff, _parse_rating(line))));
 		}
-		buff.push_back(text);
-		result.push_back(static_cast<json&&> (_sample_to_json(buff, _parse_rating(line))));
+	}
+	catch (std::bad_alloc) {
+		src.close();
+		//вывести какое-то сообщение
+		return result;
 	}
 
 	src.close();

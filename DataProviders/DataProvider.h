@@ -1,5 +1,4 @@
 ﻿#pragma once
-
 #include <vector>
 #include <string>
 #include <fstream>
@@ -53,6 +52,11 @@ namespace tcc {
 		KaggleDataProvider(std::string& input_file)
 			: _input_file(input_file) {};
 
+		KaggleDataProvider(const KaggleDataProvider& rv)
+			: _input_file(rv._input_file) {};
+
+		KaggleDataProvider() : _input_file() {};
+
 		/**
 		@brief Функция для считывания данных из файла
 		@return Вектор структур данных, содержащих в себе считанные данные
@@ -68,3 +72,4 @@ namespace tcc {
 	};
 	*/
 }
+
