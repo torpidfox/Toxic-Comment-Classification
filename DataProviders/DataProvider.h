@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
-#include "../includes/json.hpp"
+#include "includes/json.hpp"
 
 
 using json = nlohmann::json;
@@ -23,14 +23,6 @@ namespace tcc {
 		@throw IOException Исключение возникающее при проблемах с чтением файла
 		*/
 		virtual std::vector<json> get_data() const = 0;
-		/**
-		@brief Виртуальная функция для записи данных
-		@param msg Структура данных, содержащая в себе данные подлежащие записи
-		@return Булевое значение:
-			- 0 запись не удаласть
-			- 1 запись удалась
-		*/
-		virtual bool save_data(const json& msg) const = 0;
 	};
 
 	/**
@@ -40,20 +32,25 @@ namespace tcc {
 	private:
 		std::string _input_file;
 
-		static const char s_delim = ',';
+		//разделители в файле
+		static const char s_delim;
 		static const char* s_quot;
 
-		static json _sample_to_json(std::vector<std::string>& s, std::vector<bool>& r);
-		static std::string _parse_id(std::string& s);
-		static bool _parse_text(std::string& line, std::string& dst);
-		static std::vector<bool> _parse_rating(std::string& line);
+		//перевод строк с информацией о тексте в json
+		json _sample_to_json(std::vector<std::string>& text, std::vector<bool>& ratings) const;
+		//чтение id
+		std::string _parse_id(std::string& s) const;
+		//чтение комментария
+		bool _parse_text(std::string& line, std::string& dst) const;
+		//чтение оценки
+		std::vector<bool> _parse_rating(std::string& line) const;
 
 	public:
 		/**
 		@brief Конструктор класса
 		@param input_file Имя файла для чтения
 		*/
-		KaggleDataProvider(std::string input_file)
+		KaggleDataProvider(std::string& input_file)
 			: _input_file(input_file) {};
 
 		/**
@@ -62,15 +59,6 @@ namespace tcc {
 		@throw IOException Исключение возникающее при проблемах с чтением файла
 		*/
 		std::vector<json> get_data() const override;
-
-		/**
-		@brief Функция для записи данных в файл
-		@param msg Структура данных, содержащая в себе данные подлежащие записи
-		@return Булевое значение:
-			- 0 запись не удаласть
-			- 1 запись удалась
-		*/
-		bool save_data(const json& msg) const override;
 	};
 
 	/*

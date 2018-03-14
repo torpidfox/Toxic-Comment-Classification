@@ -2,15 +2,19 @@
 
 #include "includes\json.hpp"
 #include "Cores\Core.h"
+#include "DataProviders\DataProvider.h"
 
 
-using json = nlohmann::json;
 
 /**
 @brief Точка входа в программу
 */
 int main(void) {
 	json j;
+	std::string path = "C:\\tmp\\test.csv";
+	auto test = tcc::KaggleDataProvider(path);
+	auto data = test.get_data();
+	for (auto el : data) std::cout << j << el << std::endl;
 
 	j["title"] = "First text";
 	j["text"] = "It is my text. Read it!";
