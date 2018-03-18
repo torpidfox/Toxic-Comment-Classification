@@ -1,52 +1,57 @@
-#pragma once
+п»ї#pragma once
 
 #include<memory>
 
-#include "../DataProviders/DataProvider.h"
-#include "../Cores/Core.h"
-#include "../DataHandlers/DataPreprocessing.h"
+#include "DataProviders/DataProvider.h"
+#include "Cores/Core.h"
+
 
 
 /**
 namespace tcc
-@brief Пространство имен tcc
+@brief РџСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РёРјРµРЅ tcc
 */
 namespace tcc {
+
 	/**
-	@brief Интерфейс для классов контроллеров управляющими ходом программы
+	@brief РћР±СЂР°Р±РѕС‚РєР° Р°СЂРіСѓРјРµРЅС‚РѕРІ РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРё
+	@param argc РєРѕР»РёС‡РµСЃС‚РІРѕ Р°СЂРіСѓРјРµРЅС‚РѕРІ
+	@param argv СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РјР°СЃСЃРёРІ СЃ РґР°РЅРЅС‹РјРё
+	*/
+	json parse_cmd(int argc, char* argv[]);
+	/**
+	@brief РРЅС‚РµСЂС„РµР№СЃ РґР»СЏ РєР»Р°СЃСЃРѕРІ РєРѕРЅС‚СЂРѕР»Р»РµСЂРѕРІ СѓРїСЂР°РІР»СЏСЋС‰РёРјРё С…РѕРґРѕРј РїСЂРѕРіСЂР°РјРјС‹
 	*/
 	class Controller {
 		/**
-		@brief Виртуальная функция для запуска сценария программы
+		@brief Р’РёСЂС‚СѓР°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ Р·Р°РїСѓСЃРєР° СЃС†РµРЅР°СЂРёСЏ РїСЂРѕРіСЂР°РјРјС‹
 		*/
 		virtual void run() const = 0;
 	};
 
 
 	/**
-	@brief Основной класс контроллер управляющий ходом программы
+	@brief РћСЃРЅРѕРІРЅРѕР№ РєР»Р°СЃСЃ РєРѕРЅС‚СЂРѕР»Р»РµСЂ СѓРїСЂР°РІР»СЏСЋС‰РёР№ С…РѕРґРѕРј РїСЂРѕРіСЂР°РјРјС‹
 	*/
 	class MainController : public Controller {
 	private:
 		std::shared_ptr<DataProvider> _data_provider;
 		std::shared_ptr<Core> _core;
-		std::shared_ptr<DataPreprocessing> _data_processing;
 
 	public:
 		/**
-		@brief Конструктор класса
-		@param data_provider Указатель на используемый провайдер
-		@param data_processing Указатель на используемый предобработчик данных
-		@param core Указатель на используемое ядро
+		@brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
+		@param data_provider РЈРєР°Р·Р°С‚РµР»СЊ РЅР° РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ РїСЂРѕРІР°Р№РґРµСЂ
+		@param data_processing РЈРєР°Р·Р°С‚РµР»СЊ РЅР° РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ РїСЂРµРґРѕР±СЂР°Р±РѕС‚С‡РёРє РґР°РЅРЅС‹С…
+		@param core РЈРєР°Р·Р°С‚РµР»СЊ РЅР° РёСЃРїРѕР»СЊР·СѓРµРјРѕРµ СЏРґСЂРѕ
 		*/
 		MainController(std::shared_ptr<DataProvider> data_provider,
-			std::shared_ptr<DataPreprocessing> data_processing,
 			std::shared_ptr<Core> core)
-			: _data_provider(data_provider), _core(core), _data_processing(data_processing)
+			: _data_provider(data_provider), _core(core)
 		{};
 
 		/**
-		@brief Функция для запуска сценария программы
+		@brief Р¤СѓРЅРєС†РёСЏ РґР»СЏ Р·Р°РїСѓСЃРєР° СЃС†РµРЅР°СЂРёСЏ РїСЂРѕРіСЂР°РјРјС‹
 		*/
 		void run() const override;
 	};

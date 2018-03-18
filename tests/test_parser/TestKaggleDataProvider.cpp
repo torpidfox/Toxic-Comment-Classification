@@ -10,7 +10,7 @@ void TestKaggleDataProvider::test_null_data_provided() {
 }
 
 void TestKaggleDataProvider::test_bad_mem_alloc() {
-	std::string file_name = "C:\\tmp\\test.csv";
+	std::string file_name = "..\\data\\test.csv";
 	tcc::KaggleDataProvider parser(file_name);
 	std::vector<int> memory_keeper(1);
 	int memory_limit = memory_keeper.max_size();
@@ -28,7 +28,7 @@ void TestKaggleDataProvider::test_format_data() {
 }
 
 void TestKaggleDataProvider::test_format() {
-	std::string file_name = "C:\\git\\DataProviders\\test.csv";
+	std::string file_name = "..\\data\\test.csv"
 	tcc::KaggleDataProvider parser(file_name);
 	std::vector<json> data = parser.get_data();
 

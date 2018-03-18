@@ -12,9 +12,9 @@
 @brief Точка входа в программу
 */
 int main(int argc, char* argv[]) {
-	tcc::StreamDataWriter buf = tcc::StreamDataWriter("D:\\git\\tcc\\DataProviders\\test_wr.csv");
+	tcc::StreamDataWriter buf = tcc::StreamDataWriter("data\\test_wr.csv");
 	json j;
-	std::string path = "D:\\git\\tcc\\DataProviders\\test.csv";
+	std::string path = "data\\test.csv";
 	auto test = tcc::KaggleDataProvider(path);
 	auto data = test.get_data();
 	buf << data;
