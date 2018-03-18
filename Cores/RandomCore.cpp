@@ -1,7 +1,7 @@
 #include <vector>
 #include <string>
 
-#include "Core.h";
+#include "Core.h"
 
 
 void tcc::RandomCore::run(json& msg) const {

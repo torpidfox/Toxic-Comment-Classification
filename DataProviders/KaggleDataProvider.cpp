@@ -20,7 +20,7 @@ json tcc::KaggleDataProvider::_sample_to_json(std::vector<std::string>& text, st
 	std::transform(classes.begin(), classes.end(), ratings.begin(), classes_list.begin(),
 		std::make_pair<std::string, bool>);
 	for (auto el : classes_list)
-		result["rating"][el.first] = el.second;
+		result[std::string("rating")][el.first] = el.second;
 
 	return result;
 }
@@ -59,7 +59,7 @@ std::vector<bool> tcc::KaggleDataProvider::_parse_rating(std::string& line) cons
 	
 	for (auto el : line) {
 		if (el != s_delim)
-			result.push_back(el - '0');
+			result.push_back(static_cast<bool&&>(el - '0'));
 	}
 	
 	return result;
