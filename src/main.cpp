@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
 	auto test = tcc::KaggleDataProvider(path);
 	auto data = test.get_data();
 	buf << data;
-	std::cout << static_cast<int> (buf.state());
+	std::cout << static_cast<int> (buf.state()) << std::endl;
 
 	j["title"] = "First text";
 	j["text"] = "It is my text. Read it!";
@@ -27,7 +27,11 @@ int main(int argc, char* argv[]) {
 	cor->run(j);
 	delete cor;
 
-	std::cout << "Input any for exit..." << std::endl;
+	std::cout << std::endl << j << std::endl;
+
+	std::cout << std::endl << data << std::endl;
+
+	std::cout << std::endl << "Input any for exit..." << std::endl;
 	char c;
 	std::cin >> c;
 	return 0;

@@ -15,33 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Controllers\Controller.h">
+    <ClInclude Include="src\DataConsumers\StreamDataWriter.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Cores\Core.h">
+    <ClInclude Include="src\Controllers\Controller.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="DataProviders\DataProvider.h">
+    <ClInclude Include="src\Cores\Core.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="includes\json.hpp">
+    <ClInclude Include="src\DataPreprocessing\DataPreprocessing.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="DataConsumers\StreamDataWriter.h">
+    <ClInclude Include="src\DataProviders\DataProvider.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="src\includes\json.hpp">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\cmdParser.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="Cores\RandomCore.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="DataProviders\KaggleDataProvider.cpp">
+    <ClCompile Include="src\DataProviders\KaggleDataProvider.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="cmdParser.cpp">
+    <ClCompile Include="src\Cores\RandomCore.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>

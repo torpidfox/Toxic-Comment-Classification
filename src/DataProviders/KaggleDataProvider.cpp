@@ -1,4 +1,4 @@
-﻿#include "DataProviders/DataProvider.h"
+﻿#include "DataProvider.h"
 
 const char* tcc::KaggleDataProvider::s_quot = "\",";
 const char tcc::KaggleDataProvider::s_delim = ',';

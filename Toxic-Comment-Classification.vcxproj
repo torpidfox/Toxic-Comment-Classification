@@ -19,17 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Controllers\Controller.h" />
-    <ClInclude Include="Cores\Core.h" />
-    <ClInclude Include="DataConsumers\StreamDataWriter.h" />
-    <ClInclude Include="DataProviders\DataProvider.h" />
-    <ClInclude Include="includes\json.hpp" />
+    <ClInclude Include="src\Controllers\Controller.h" />
+    <ClInclude Include="src\Cores\Core.h" />
+    <ClInclude Include="src\DataConsumers\StreamDataWriter.h" />
+    <ClInclude Include="src\DataPreprocessing\DataPreprocessing.h" />
+    <ClInclude Include="src\DataProviders\DataProvider.h" />
+    <ClInclude Include="src\includes\json.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cmdParser.cpp" />
-    <ClCompile Include="Cores\RandomCore.cpp" />
-    <ClCompile Include="DataProviders\KaggleDataProvider.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\cmdParser.cpp" />
+    <ClCompile Include="src\Cores\RandomCore.cpp" />
+    <ClCompile Include="src\DataProviders\KaggleDataProvider.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9B86BB11-C525-48BA-8AE6-E801E4BB29C2}</ProjectGuid>
