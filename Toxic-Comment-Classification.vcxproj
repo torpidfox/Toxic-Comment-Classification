@@ -24,6 +24,7 @@
     <ClInclude Include="src\DataConsumers\StreamDataWriter.h" />
     <ClInclude Include="src\DataPreprocessing\DataPreprocessing.h" />
     <ClInclude Include="src\DataProviders\DataProvider.h" />
+    <ClInclude Include="src\GUI\mainwindow.h" />
     <ClInclude Include="src\includes\json.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +32,7 @@
     <ClCompile Include="src\Cores\RandomCore.cpp" />
     <ClCompile Include="src\DataProviders\KaggleDataProvider.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClInclude Include="src\GUI\mainwindow.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9B86BB11-C525-48BA-8AE6-E801E4BB29C2}</ProjectGuid>
