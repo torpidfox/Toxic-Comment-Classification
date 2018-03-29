@@ -1,14 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Toxic-Comment-Classification", "Toxic-Comment-Classification.vcxproj", "{9B86BB11-C525-48BA-8AE6-E801E4BB29C2}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_StreamDataWriter", "tests\test_StreamDataWriter\test_StreamDataWriter\test_StreamDataWriter.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{9B86BB11-C525-48BA-8AE6-E801E4BB29C2} = {9B86BB11-C525-48BA-8AE6-E801E4BB29C2}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,14 +21,11 @@ Global
 		{9B86BB11-C525-48BA-8AE6-E801E4BB29C2}.Release|x64.Build.0 = Release|x64
 		{9B86BB11-C525-48BA-8AE6-E801E4BB29C2}.Release|x86.ActiveCfg = Release|Win32
 		{9B86BB11-C525-48BA-8AE6-E801E4BB29C2}.Release|x86.Build.0 = Release|Win32
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.ActiveCfg = Debug|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.Build.0 = Debug|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x86.ActiveCfg = Debug|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.ActiveCfg = Release|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.Build.0 = Release|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19059469-D72E-4DDC-940C-0FC550C759F5}
 	EndGlobalSection
 EndGlobal

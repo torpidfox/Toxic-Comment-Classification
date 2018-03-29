@@ -1,11 +1,8 @@
-﻿#pragma once
-
-#include <vector>
+﻿#include <vector>
 #include <string>
 #include <fstream>
 #include <ostream>
-#include "includes/json.hpp"
-
+#include "../includes/json.hpp"
 
 using json = nlohmann::json;
 
@@ -54,6 +51,8 @@ namespace tcc {
 		*/
 		template<typename T>
 		State operator<<(T& el);
+
+		State close() { if (_output) _output->close(); return _cur_state; }
 	private:
 		std::ofstream* _output = nullptr;
 		State _cur_state = GOOD;
@@ -66,8 +65,10 @@ tcc::StreamDataWriter::State tcc::StreamDataWriter::operator<<(T& el) {
 		*(_output) << el;
 		_output->flush();
 	}
-	else
+	else {
 		std::cout << el;
+		return _cur_state;
+	}
 
 	if (_output->rdstate() == std::ios::badbit) {
 		_cur_state = State::FORMAT_FAIL;

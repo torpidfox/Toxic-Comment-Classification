@@ -1,6 +1,6 @@
 #include<iostream>
 #include "includes/json.hpp"
-#include "Controllers\Controller.h"
+#include "Controllers/Controller.h"
 
 
 json tcc::parse_cmd(int argc, char* argv[]) {

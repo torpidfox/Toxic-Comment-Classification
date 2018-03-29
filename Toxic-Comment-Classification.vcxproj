@@ -20,19 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Controllers\Controller.h" />
+    <ClInclude Include="src\Controllers\Vocab.h" />
     <ClInclude Include="src\Cores\Core.h" />
     <ClInclude Include="src\DataConsumers\StreamDataWriter.h" />
     <ClInclude Include="src\DataPreprocessing\DataPreprocessing.h" />
     <ClInclude Include="src\DataProviders\DataProvider.h" />
-    <ClInclude Include="src\GUI\mainwindow.h" />
     <ClInclude Include="src\includes\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="src\cmdParser.cpp" />
     <ClCompile Include="src\Cores\RandomCore.cpp" />
     <ClCompile Include="src\DataProviders\KaggleDataProvider.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClInclude Include="src\GUI\mainwindow.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9B86BB11-C525-48BA-8AE6-E801E4BB29C2}</ProjectGuid>
@@ -85,7 +84,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\git\tcc;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
