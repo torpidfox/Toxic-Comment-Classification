@@ -1,9 +1,13 @@
-#pragma once
+#include "includes/json.hpp"
+#include "Classification/Classifyer.h"
 
-#include "../includes/json.hpp"
+#define LABELS_COUNT 5
 
 
 using json = nlohmann::json;
+using textVec = std::vector<bool>;
+using labels = std::array<bool, 5>;
+using labeledText = std::vector<std::pair<textVec, labels>>;
 
 /**
 namespace tcc
@@ -13,13 +17,19 @@ namespace tcc {
 	/**
 	@brief Интерфейс классов ядра для классификации "недоброжелательности" текста
 	 */
+
 	class Core {
 	public:
 		/**
 		@brief Виртуальная функция классификации "недоброжелательности" текста
-		@param msg Структура данных, содержащая в себе текст подлежащий анализу
+		@param t текст
 		*/
-		virtual void run(json& msg) const = 0;
+		virtual std::vector<double> run(textVec& t) const = 0;
+		/**
+		@brief Запуск обучения
+		*/
+		virtual void trainLoop() = 0;
+		virtual ~Core() {};
 	};
 
 	/**
@@ -27,18 +37,23 @@ namespace tcc {
 	*/
 	class RandomCore : public Core {
 	private:
-		double MAX_PERCENT;
+		std::vector<std::shared_ptr<Classifyer>> _model;
 	public:
 		/**
 		@brief Конструктор класса
+		@param model вектор классификаторов, задающих используемую модель
 		*/
-		RandomCore(double max_percent=100) : MAX_PERCENT(max_percent)
-		{};
+		RandomCore() {};
+		RandomCore(std::vector<std::shared_ptr<Classifyer>> model) { _model = model; }
+		~RandomCore() override {};
 
 		/**
 		@brief Функция классификации "недоброжелательности" текста
-		@param msg Структура данных, содержащая в себе текст подлежащий анализу
+		@param t текст для анализа
 		*/
-		void run(json& msg) const override;
+		std::vector<double> run(textVec& t) const override;
+		
+		void trainLoop() override 
+		{ for (auto el : _model) el->train(); };
 	};
 }

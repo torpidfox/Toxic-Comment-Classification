@@ -9,15 +9,6 @@ void TestKaggleDataProvider::test_null_data_provided() {
 	QVERIFY(parser.get_data().size() == 0);
 }
 
-void TestKaggleDataProvider::test_bad_mem_alloc() {
-	std::string file_name = "..\\data\\test.csv";
-	tcc::KaggleDataProvider parser(file_name);
-	std::vector<int> memory_keeper(1);
-	int memory_limit = memory_keeper.max_size();
-	memory_keeper.resize(memory_limit * 0.99);
-	parser.get_data();
-}
-
 void TestKaggleDataProvider::test_format_data() {
 	QTest::addColumn<QString>("tag");
 	QTest::addColumn<QString>("type");
@@ -28,7 +19,7 @@ void TestKaggleDataProvider::test_format_data() {
 }
 
 void TestKaggleDataProvider::test_format() {
-	std::string file_name = "..\\data\\test.csv"
+	std::string file_name = "..\\data\\test.csv";
 	tcc::KaggleDataProvider parser(file_name);
 	std::vector<json> data = parser.get_data();
 

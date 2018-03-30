@@ -1,13 +1,12 @@
-#include <vector>
-#include <string>
+#include "Cores/Core.h"
 
-#include "Core.h"
+namespace tcc {
+	std::vector<double> RandomCore::run(textVec& t) const {
+		std::vector<double> result;
 
+		for (auto el : _model)
+			result.push_back(el->run(t));
 
-void tcc::RandomCore::run(json& msg) const {
-	std::string classes[] = { "toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate" };
-	for each (std::string some_class in classes)
-	{
-		msg[some_class] = (double)(std::rand()) / RAND_MAX * MAX_PERCENT;
-	}
+		return result;
+	};
 }

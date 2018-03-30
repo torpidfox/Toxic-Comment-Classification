@@ -16,12 +16,15 @@ namespace tcc {
 	@brief Интерфейс для классов считывания/записи данных
 	*/
 	class DataProvider {
+	public:
 		/**
 		@brief Виртуальная функция для считывания данных
 		@return Вектор структур данных, содержащих в себе считанные данные
 		@throw IOException Исключение возникающее при проблемах с чтением файла
 		*/
 		virtual std::vector<json> get_data() const = 0;
+		virtual int labels_count() const = 0;
+		virtual ~DataProvider() {};
 	};
 
 	/**
@@ -57,12 +60,16 @@ namespace tcc {
 
 		KaggleDataProvider() : _input_file() {};
 
+		int labels_count() const override { return 5; }
+
 		/**
 		@brief Функция для считывания данных из файла
 		@return Вектор структур данных, содержащих в себе считанные данные
 		@throw IOException Исключение возникающее при проблемах с чтением файла
 		*/
 		std::vector<json> get_data() const override;
+
+		~KaggleDataProvider() override {};
 	};
 
 	/*
