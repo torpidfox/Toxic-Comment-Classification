@@ -29,6 +29,7 @@
     <ClInclude Include="src\DataPreprocessing\DataPreprocessing.h" />
     <ClInclude Include="src\DataProviders\DataProvider.h" />
     <ClInclude Include="src\includes\json.hpp" />
+    <ClInclude Include="src\Stemmer\Stemmer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -36,6 +37,7 @@
     <ClCompile Include="src\cmdParser.cpp" />
     <ClCompile Include="src\Cores\RandomCore.cpp" />
     <ClCompile Include="src\DataProviders\KaggleDataProvider.cpp" />
+    <ClCompile Include="src\Stemmer\Stemming.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9B86BB11-C525-48BA-8AE6-E801E4BB29C2}</ProjectGuid>
