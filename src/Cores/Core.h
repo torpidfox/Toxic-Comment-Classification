@@ -1,4 +1,4 @@
-#include "includes/json.hpp"
+п»ї#include "includes/json.hpp"
 #include "Classification/Classifyer.h"
 
 #define LABELS_COUNT 5
@@ -11,45 +11,44 @@ using labeledText = std::vector<std::pair<textVec, labels>>;
 
 /**
 namespace tcc
-@brief Пространство имен tcc
+@brief РџСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РёРјРµРЅ tcc
 */
 namespace tcc {
 	/**
-	@brief Интерфейс классов ядра для классификации "недоброжелательности" текста
+	@brief РРЅС‚РµСЂС„РµР№СЃ РєР»Р°СЃСЃРѕРІ СЏРґСЂР° РґР»СЏ РєР»Р°СЃСЃРёС„РёРєР°С†РёРё "РЅРµРґРѕР±СЂРѕР¶РµР»Р°С‚РµР»СЊРЅРѕСЃС‚Рё" С‚РµРєСЃС‚Р°
 	 */
 
 	class Core {
 	public:
 		/**
-		@brief Виртуальная функция классификации "недоброжелательности" текста
-		@param t текст
+		@brief Р’РёСЂС‚СѓР°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РєР»Р°СЃСЃРёС„РёРєР°С†РёРё "РЅРµРґРѕР±СЂРѕР¶РµР»Р°С‚РµР»СЊРЅРѕСЃС‚Рё" С‚РµРєСЃС‚Р°
+		@param t С‚РµРєСЃС‚
 		*/
 		virtual std::vector<double> run(textVec& t) const = 0;
 		/**
-		@brief Запуск обучения
+		@brief Р—Р°РїСѓСЃРє РѕР±СѓС‡РµРЅРёСЏ
 		*/
 		virtual void trainLoop() = 0;
 		virtual ~Core() {};
 	};
 
 	/**
-	@brief Класс - ядро для классификации "недоброжелательности" текста
+	@brief РљР»Р°СЃСЃ - СЏРґСЂРѕ РґР»СЏ РєР»Р°СЃСЃРёС„РёРєР°С†РёРё "РЅРµРґРѕР±СЂРѕР¶РµР»Р°С‚РµР»СЊРЅРѕСЃС‚Рё" С‚РµРєСЃС‚Р°
 	*/
 	class RandomCore : public Core {
 	private:
 		std::vector<std::shared_ptr<Classifyer>> _model;
 	public:
 		/**
-		@brief Конструктор класса
-		@param model вектор классификаторов, задающих используемую модель
+		@brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
+		@param model РІРµРєС‚РѕСЂ РєР»Р°СЃСЃРёС„РёРєР°С‚РѕСЂРѕРІ, Р·Р°РґР°СЋС‰РёС… РёСЃРїРѕР»СЊР·СѓРµРјСѓСЋ РјРѕРґРµР»СЊ
 		*/
-		RandomCore() {};
 		RandomCore(std::vector<std::shared_ptr<Classifyer>> model) { _model = model; }
-		~RandomCore() override {};
+		~RandomCore() override = default;
 
 		/**
-		@brief Функция классификации "недоброжелательности" текста
-		@param t текст для анализа
+		@brief Р¤СѓРЅРєС†РёСЏ РєР»Р°СЃСЃРёС„РёРєР°С†РёРё "РЅРµРґРѕР±СЂРѕР¶РµР»Р°С‚РµР»СЊРЅРѕСЃС‚Рё" С‚РµРєСЃС‚Р°
+		@param t С‚РµРєСЃС‚ РґР»СЏ Р°РЅР°Р»РёР·Р°
 		*/
 		std::vector<double> run(textVec& t) const override;
 		

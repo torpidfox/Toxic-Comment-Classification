@@ -7,9 +7,18 @@
 #include "BOW.h"
 
 namespace tcc {
+	/** @defgroup aliases Сокращения
+	*  Сокращения для названий используемых типов
+	*  @{
+	*/
+
+	/** @brief Положительное целое*/
 	using uint = unsigned int;
+	/** @brief Вектор положительных целых*/
 	using vec = std::vector<uint>;
+	/** @brief Массив текстов*/
 	using text = std::vector<std::string>;
+	/** @} */
 
 	/**
 	@brief Интерфейс класса, преобразующего текст в вектор
@@ -18,19 +27,20 @@ namespace tcc {
 	public:
 		/**
 		@brief Оценка выраженности признака, задаваемого одним словом
-		@param t текст
+		@param s текст
 		@param f функция, с помощью которой оценивается выраженность признака
 		*/		
 		virtual uint extract_feature(std::string& s, std::function<double(double)> f) const = 0;
 		/**
 		@brief Оценка выраженности признака, задаваемого несколькими словами
-		@param t текст
+		@param s текст
 		@param f функция, с помощью которой оценивается выраженность признака
 		*/
 		virtual uint extract_feature(text& s, std::function<double(double)> f) const = 0;
 		/**
-		@brief Сжатие размерности 
-		@param t текст
+		@brief Сжатие размерности
+		@param dim желаемая размерность
+		@param s текст
 		@param f функция, с помощью которой производится сжатие
 		*/
 		virtual uint reduce_dimensions(uint dim, text& s, std::function<double(double)> f) const = 0;
@@ -39,7 +49,7 @@ namespace tcc {
 		@param l, r тексты
 		*/
 		double metric(Features& l, Features& r);
-		virtual ~Features() {};
+		virtual ~Features() = default;
 	};
 
 
@@ -53,8 +63,12 @@ namespace tcc {
 		std::vector<uint> _non_zero_val;
 		
 	public:
+		/**
+		@brief Конструктор экземпляра класса
+		@param global - информация о словах, встречающихся в корпусе текстов
+		*/
 		BOWFeatures(std::shared_ptr<BOW> global): _global(global) {};
-		~BOWFeatures() override {};
+		~BOWFeatures() override = default;
 	};
 }
 

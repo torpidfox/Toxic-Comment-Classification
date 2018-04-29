@@ -28,6 +28,9 @@ namespace tcc {
 		const Word& operator= (Word& r) { word_hash = r.word_hash;  freq = r.word_hash; return r; }
 	};
 
+	/**
+	@brief —труктура узла дерева двоичного поиска
+	*/
 	struct BSTNode {
 		Word w;
 		BSTNode* left;

@@ -23,7 +23,7 @@ namespace tcc {
 		@throw IOException Исключение возникающее при проблемах с чтением файла
 		*/
 		virtual std::vector<json> get_data() const = 0;
-		virtual int labels_count() const = 0;
+		//virtual int labels_count() const = 0;
 		virtual ~DataProvider() {};
 	};
 
@@ -54,13 +54,14 @@ namespace tcc {
 		*/
 		KaggleDataProvider(std::string& input_file)
 			: _input_file(input_file) {};
-
+		/**
+		@brief Конструктор копии экземпляра класса
+		@param rv Копируемый экземпляр
+		*/
 		KaggleDataProvider(const KaggleDataProvider& rv)
 			: _input_file(rv._input_file) {};
 
-		KaggleDataProvider() : _input_file() {};
-
-		int labels_count() const override { return 5; }
+		//int labels_count() const override { return 5; }
 
 		/**
 		@brief Функция для считывания данных из файла
@@ -69,7 +70,7 @@ namespace tcc {
 		*/
 		std::vector<json> get_data() const override;
 
-		~KaggleDataProvider() override {};
+		~KaggleDataProvider() override = default;
 	};
 
 	/*
